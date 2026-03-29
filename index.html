@@ -67,10 +67,15 @@
         <p>Tractor</p>
     </div>
 
-    <!-- NEW COURIER OPTION -->
     <div class="vehicle" onclick="selectVehicle('courier', this)">
         <img src="https://cdn-icons-png.flaticon.com/512/1048/1048317.png">
         <p>Courier</p>
+    </div>
+
+    <!-- NEW DRIVER OPTION -->
+    <div class="vehicle" onclick="selectVehicle('driver', this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995530.png">
+        <p>Driver</p>
     </div>
 
 </div>
@@ -91,13 +96,17 @@ function selectVehicle(vehicle, element) {
         car: 20,
         erickshaw: 15,
         tractor: 25,
-        courier: 12   // NEW RATE
+        courier: 12,
+        driver: 50   // NEW DRIVER RATE (per ride)
     };
 
-    let price = distance * rates[vehicle];
+    let price = rates[vehicle] * distance;
+
+    // Special message for driver
+    let typeText = vehicle === "driver" ? "Driver Booked" : vehicle.toUpperCase() + " Available";
 
     document.getElementById("results").innerHTML =
-        `<p>${vehicle.toUpperCase()} Available<br>
+        `<p>${typeText}<br>
         Distance: ${distance} km<br>
         Price: ₹${price}</p>`;
 }
