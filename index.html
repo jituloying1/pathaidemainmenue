@@ -3,6 +3,9 @@
 <head>
     <title>Vehicle Search</title>
 
+    <!-- IMPORTANT FOR MOBILE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -10,31 +13,34 @@
             margin: 0;
             padding: 0;
 
-            /* PROFESSIONAL GRADIENT BACKGROUND */
+            /* Professional Gradient */
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             min-height: 100vh;
             color: white;
         }
 
         h2 {
-            margin-top: 30px;
-            font-size: 32px;
-            letter-spacing: 1px;
+            margin-top: 20px;
+            font-size: 28px;
         }
 
-        /* BUTTON CONTAINER */
+        /* RESPONSIVE CONTAINER */
         .btn-container {
-            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
         }
 
-        /* PROFESSIONAL BUTTON DESIGN */
+        /* BUTTON DESIGN */
         button {
-            width: 220px;
+            width: 100%;
             padding: 15px;
-            margin: 12px;
             border: none;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             cursor: pointer;
             background: rgba(255, 255, 255, 0.1);
@@ -52,12 +58,24 @@
 
         /* RESULT BOX */
         #results {
-            margin-top: 30px;
-            font-size: 18px;
+            margin: 20px;
+            font-size: 16px;
             background: rgba(255,255,255,0.1);
             display: inline-block;
-            padding: 15px 25px;
+            padding: 15px 20px;
             border-radius: 10px;
+        }
+
+        /* MOBILE FONT ADJUST */
+        @media (max-width: 500px) {
+            h2 {
+                font-size: 22px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 12px;
+            }
         }
 
     </style>
@@ -74,10 +92,8 @@
 </a>
 
 <a href="https://jituloying1.github.io/pathaidecar/">
-  <button>Book Car Ride </button>
+  <button>Book Car Ride</button>
 </a>
-
-<br>
 
 <a href="https://jituloying1.github.io/pathaideerikshw/">
   <button>Book E-Rickshaw</button>
@@ -87,20 +103,16 @@
   <button>Hire a Driver</button>
 </a>
 
-<br>
-
 <a href="https://jituloying1.github.io/NortestTechnology/">
-  <button> Send a Package </button>
+  <button>Send a Package</button>
 </a>
 
 <a href="https://jituloying1.github.io/assamtech.come/">
-  <button>Book Tractor Service </button>
+  <button>Book Tractor Service</button>
 </a>
 
-<br>
-
 <a href="https://jituloying1.github.io/Anvil/">
-  <button> CALL OR CHAT NOW </button>
+  <button>CALL OR CHAT NOW</button>
 </a>
 
 </div>
