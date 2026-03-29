@@ -3,7 +3,6 @@
 <head>
     <title>Vehicle Search</title>
 
-    <!-- IMPORTANT FOR MOBILE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -12,69 +11,103 @@
             text-align: center;
             margin: 0;
             padding: 0;
-
-            /* Professional Gradient */
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             min-height: 100vh;
             color: white;
+
+            /* PAGE LOAD ANIMATION */
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
         h2 {
-            margin-top: 20px;
+            margin-top: 15px;
             font-size: 28px;
         }
 
-        /* RESPONSIVE CONTAINER */
+        /* LOGO */
+        .logo img {
+            width: 200px;
+            margin-top: 15px;
+            animation: zoomIn 1s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* GRID */
         .btn-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             padding: 20px;
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
         }
 
-        /* BUTTON DESIGN */
+        /* BUTTON STYLE */
         button {
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             border: none;
-            border-radius: 12px;
-            font-size: 15px;
+            border-radius: 15px;
+            font-size: 17px;
             font-weight: bold;
             cursor: pointer;
             background: rgba(255, 255, 255, 0.1);
             color: white;
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             transition: 0.3s;
         }
 
+        /* HOVER ANIMATION */
         button:hover {
             background: white;
             color: #1e3c72;
-            transform: translateY(-3px);
+            transform: translateY(-5px) scale(1.05);
         }
 
-        /* RESULT BOX */
-        #results {
-            margin: 20px;
-            font-size: 16px;
-            background: rgba(255,255,255,0.1);
-            display: inline-block;
-            padding: 15px 20px;
-            border-radius: 10px;
+        /* CLICK ANIMATION */
+        button:active {
+            transform: scale(0.95);
         }
 
-        /* MOBILE FONT ADJUST */
-        @media (max-width: 500px) {
-            h2 {
-                font-size: 22px;
-            }
+        /* CENTER LAST BUTTON */
+        .center-btn {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+        }
 
-            button {
-                font-size: 14px;
-                padding: 12px;
+        .center-btn button {
+            width: 60%;
+            background: #ff4b2b;
+        }
+
+        .center-btn button:hover {
+            background: white;
+            color: #ff4b2b;
+        }
+
+        /* PAGE TRANSITION EFFECT */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            to { opacity: 0; }
+        }
+
+        @media(max-width:500px){
+            .center-btn button{
+                width: 90%;
             }
         }
 
@@ -83,41 +116,59 @@
 
 <body>
 
+<!-- LOGO -->
+<div class="logo">
+    <img src="file_000000004d2871fa8614eb9e6dbd62f0 (1).png" alt="Logo">
+</div>
+
 <h2>Select Your Ride</h2>
 
 <div class="btn-container">
 
-<a href="https://jituloying1.github.io/pathaidebikecustomer/">
+<a href="https://jituloying1.github.io/pathaidebikecustomer/" onclick="goPage(event,this)">
   <button>Book Bike Ride</button>
 </a>
 
-<a href="https://jituloying1.github.io/pathaidecar/">
+<a href="https://jituloying1.github.io/pathaidecar/" onclick="goPage(event,this)">
   <button>Book Car Ride</button>
 </a>
 
-<a href="https://jituloying1.github.io/pathaideerikshw/">
+<a href="https://jituloying1.github.io/pathaideerikshw/" onclick="goPage(event,this)">
   <button>Book E-Rickshaw</button>
 </a>
 
-<a href="https://jituloying1.github.io/Pathaidedriverbookingpage/">
+<a href="https://jituloying1.github.io/Pathaidedriverbookingpage/" onclick="goPage(event,this)">
   <button>Hire a Driver</button>
 </a>
 
-<a href="https://jituloying1.github.io/NortestTechnology/">
+<a href="https://jituloying1.github.io/NortestTechnology/" onclick="goPage(event,this)">
   <button>Send a Package</button>
 </a>
 
-<a href="https://jituloying1.github.io/assamtech.come/">
+<a href="https://jituloying1.github.io/assamtech.come/" onclick="goPage(event,this)">
   <button>Book Tractor Service</button>
 </a>
 
-<a href="https://jituloying1.github.io/Anvil/">
+<!-- CENTER BUTTON -->
+<div class="center-btn">
+<a href="https://jituloying1.github.io/Anvil/" onclick="goPage(event,this)">
   <button>CALL OR CHAT NOW</button>
 </a>
+</div>
 
 </div>
 
-<div id="results"></div>
+<script>
+function goPage(event, link){
+    event.preventDefault();
+
+    document.body.classList.add("fade-out");
+
+    setTimeout(()=>{
+        window.location = link.href;
+    },500);
+}
+</script>
 
 </body>
 </html>
