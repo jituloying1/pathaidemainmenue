@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Search</title>
+</head>
+<body>
+
+<h2>Search Ride</h2>
+
+<input type="text" id="from" placeholder="From Location">
+<input type="text" id="to" placeholder="To Destination">
+
+<select id="vehicle">
+    <option value="bike">Bike</option>
+    <option value="car">Car</option>
+    <option value="erickshaw">E-Rickshaw</option>
+    <option value="tractor">Tractor</option>
+</select>
+
+<button onclick="searchRide()">Search</button>
+
+<div id="results"></div>
+
+<script>
+function searchRide() {
+    let distance = 5; // example fixed distance
+
+    let rates = {
+        bike: 10,
+        car: 20,
+        erickshaw: 15,
+        tractor: 25
+    };
+
+    let vehicle = document.getElementById("vehicle").value;
+    let price = distance * rates[vehicle];
+
+    document.getElementById("results").innerHTML =
+        `<p>${vehicle.toUpperCase()} Available<br>
+        Distance: ${distance} km<br>
+        Price: ₹${price}</p>`;
+}
+</script>
+
+</body>
+</html>
