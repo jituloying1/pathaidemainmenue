@@ -14,6 +14,7 @@
             justify-content: center;
             gap: 20px;
             margin: 20px 0;
+            flex-wrap: wrap;
         }
 
         .vehicle {
@@ -66,6 +67,12 @@
         <p>Tractor</p>
     </div>
 
+    <!-- NEW COURIER OPTION -->
+    <div class="vehicle" onclick="selectVehicle('courier', this)">
+        <img src="https://cdn-icons-png.flaticon.com/512/1048/1048317.png">
+        <p>Courier</p>
+    </div>
+
 </div>
 
 <div id="results"></div>
@@ -83,7 +90,8 @@ function selectVehicle(vehicle, element) {
         bike: 10,
         car: 20,
         erickshaw: 15,
-        tractor: 25
+        tractor: 25,
+        courier: 12   // NEW RATE
     };
 
     let price = distance * rates[vehicle];
