@@ -31,9 +31,11 @@
 
         /* LOGO */
         .logo img {
-            width: 200px;
+            width: 220px;
             margin-top: 15px;
             animation: zoomIn 1s ease;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         @keyframes zoomIn {
@@ -67,19 +69,19 @@
             transition: 0.3s;
         }
 
-        /* HOVER ANIMATION */
+        /* HOVER */
         button:hover {
             background: white;
             color: #1e3c72;
             transform: translateY(-5px) scale(1.05);
         }
 
-        /* CLICK ANIMATION */
+        /* CLICK */
         button:active {
             transform: scale(0.95);
         }
 
-        /* CENTER LAST BUTTON */
+        /* CENTER BUTTON */
         .center-btn {
             grid-column: 1 / -1;
             display: flex;
@@ -96,7 +98,7 @@
             color: #ff4b2b;
         }
 
-        /* PAGE TRANSITION EFFECT */
+        /* PAGE TRANSITION */
         .fade-out {
             animation: fadeOut 0.5s forwards;
         }
@@ -118,7 +120,7 @@
 
 <!-- LOGO -->
 <div class="logo">
-    <img src="file_000000004d2871fa8614eb9e6dbd62f0 (1)-Photoroom">
+    <img src="file_000000004d2871fa8614eb9e6dbd62f0%20(1)-Photoroom.png" alt="Logo">
 </div>
 
 <h2>Select Your Ride</h2>
