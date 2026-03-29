@@ -47,7 +47,6 @@
 <input type="text" id="from" placeholder="From Location"><br><br>
 <input type="text" id="to" placeholder="To Destination"><br><br>
 
-<!-- Vehicle Images -->
 <div class="vehicle-container">
 
     <div class="vehicle" onclick="selectVehicle('bike', this)">
@@ -72,24 +71,15 @@
 
 </div>
 
-<button onclick="searchRide()">Search</button>
-
 <div id="results"></div>
 
 <script>
-let selectedVehicle = "";
-
 function selectVehicle(vehicle, element) {
-    selectedVehicle = vehicle;
-
-    // remove previous selection
-    document.querySelectorAll(".vehicle").forEach(v => v.classList.remove("selected"));
 
     // highlight selected
+    document.querySelectorAll(".vehicle").forEach(v => v.classList.remove("selected"));
     element.classList.add("selected");
-}
 
-function searchRide() {
     let distance = 5;
 
     let rates = {
@@ -99,15 +89,10 @@ function searchRide() {
         tractor: 25
     };
 
-    if (!selectedVehicle) {
-        alert("Please select a vehicle!");
-        return;
-    }
-
-    let price = distance * rates[selectedVehicle];
+    let price = distance * rates[vehicle];
 
     document.getElementById("results").innerHTML =
-        `<p>${selectedVehicle.toUpperCase()} Available<br>
+        `<p>${vehicle.toUpperCase()} Available<br>
         Distance: ${distance} km<br>
         Price: ₹${price}</p>`;
 }
