@@ -14,8 +14,6 @@
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             min-height: 100vh;
             color: white;
-
-            /* PAGE LOAD ANIMATION */
             opacity: 0;
             animation: fadeIn 1s ease-in forwards;
         }
@@ -69,14 +67,12 @@
             transition: 0.3s;
         }
 
-        /* HOVER */
         button:hover {
             background: white;
             color: #1e3c72;
             transform: translateY(-5px) scale(1.05);
         }
 
-        /* CLICK */
         button:active {
             transform: scale(0.95);
         }
@@ -86,16 +82,33 @@
             grid-column: 1 / -1;
             display: flex;
             justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
-        .center-btn button {
-            width: 60%;
+        /* CALL BUTTON */
+        .main-call-btn {
+            width: auto;
+            padding: 18px 25px;
             background: #ff4b2b;
         }
 
-        .center-btn button:hover {
+        .main-call-btn:hover {
             background: white;
             color: #ff4b2b;
+        }
+
+        /* SMALL TERMS BUTTON */
+        .terms-small {
+            width: auto;
+            padding: 10px 12px;
+            font-size: 12px;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .terms-small:hover {
+            background: white;
+            color: #1e3c72;
         }
 
         /* PAGE TRANSITION */
@@ -108,8 +121,8 @@
         }
 
         @media(max-width:500px){
-            .center-btn button{
-                width: 90%;
+            .main-call-btn{
+                padding: 15px;
             }
         }
 
@@ -122,7 +135,8 @@
 <div class="logo">
     <img src="file_000000004d2871fa8614eb9e6dbd62f0%20(1)-Photoroom.png" alt="Logo">
 </div>
-<h2> " লোকাল শক্তি, আধুনিক সেৱা ” </h2>
+
+<h2> " লোকেল শক্তি, আধুনিক সেৱা ” </h2>
 <h2>Select Your Ride</h2>
 
 <div class="btn-container">
@@ -151,14 +165,19 @@
   <button>Book Tractor Service</button>
 </a>
 
-<!-- CENTER BUTTON -->
+<!-- CENTER BUTTONS -->
 <div class="center-btn">
-<a href="https://jituloying1.github.io/Anvil/" onclick="goPage(event,this)">
-  <button>CALL OR CHAT NOW</button>
-</a>  
-    
-<!-- Terms Button -->
-<button class="terms-btn" onclick="downloadPDF()">Terms & Conditions</button>
+
+  <!-- CALL BUTTON -->
+  <a href="https://jituloying1.github.io/Anvil/" onclick="goPage(event,this)">
+    <button class="main-call-btn">CALL OR CHAT NOW</button>
+  </a>
+
+  <!-- TERMS BUTTON -->
+  <a href="Pathaide_Master_29_Clauses.pdf" download>
+    <button class="terms-small">Terms & Conditions </button>
+  </a>
+
 </div>
 
 </div>
@@ -166,166 +185,13 @@
 <script>
 function goPage(event, link){
     event.preventDefault();
-
     document.body.classList.add("fade-out");
 
     setTimeout(()=>{
         window.location = link.href;
     },500);
 }
-function downloadPDF() {
-    const text = 'PATHAIDE – Terms & Conditions
-PATHAIDE
-Terms & Conditions (Master – 29 Clauses, Detailed)
-1. Introduction
-These Terms & Conditions (“Terms”) constitute a legally binding agreement between Pathaide (“Company”, “we”,
-“our”) and any person (“User”, “Driver”, “Owner”) accessing or using the platform. By using Pathaide services, you
-confirm that you have read, understood, and agreed to be bound by these Terms in their entirety. These Terms
-govern all bookings, payments, services, and interactions facilitated through the platform.
-2. Nature of Services
-Pathaide operates as a technology-based platform that connects users with independent drivers and vehicle
-owners for transportation services. Pathaide does not own, operate, or control all vehicles listed on the platform
-and acts solely as a facilitator/intermediary. The contractual relationship for transportation is between the user and
-the driver/owner, subject to these Terms.
-3. Eligibility
-To use Pathaide services, a user must be at least 18 years of age and capable of entering into a legally binding
-agreement. Users must provide true, accurate, and complete information during registration and use. Pathaide
-reserves the right to verify identity and to suspend or refuse access where information is false, misleading, or
-unverifiable.
-4. Account Registration
-Users must create and maintain an account using valid credentials. The account is non-transferable and must not
-be shared. Users are responsible for maintaining the confidentiality of login details and for all activities conducted
-through their account. Any unauthorized use must be reported immediately to Pathaide.
-5. Vehicle Categories & Rules
-Pathaide facilitates multiple vehicle categories including cars, bikes, e-rickshaws, tractors, and other goods
-vehicles. Passenger vehicles are strictly for transporting persons within legal seating capacity. Tractors and goods
-vehicles are strictly for transporting materials/goods; carriage of passengers in goods vehicles is prohibited. Users
-must comply with all applicable transport rules.
-6. Booking Process
-Users must provide accurate pickup and drop details at the time of booking. Booking confirmations are subject to
-driver availability and operational constraints. Pathaide does not guarantee immediate or uninterrupted service.
-Estimated arrival times are indicative and may vary due to traffic, weather, or other factors.
-7. Pricing & Charges
-Fares are calculated based on distance, time, vehicle type, demand conditions, and other relevant factors.
-Dynamic pricing may apply during peak demand. Additional charges may include waiting time, night charges, tolls,
-parking, and heavy-load charges (for goods vehicles). All applicable charges will be communicated through the
-platform where feasible.
-8. Payments
-Page 1
-Pathaide
-PATHAIDE – Terms & Conditions
-Accepted payment methods include UPI, debit/credit cards, wallets (where available), and cash (if enabled). Users
-are obligated to complete payment upon completion of service unless prepaid. Non-payment or chargebacks may
-result in suspension, recovery actions, and/or legal proceedings as permitted by law.
-9. Cancellation & Refund
-Users may cancel a booking prior to service commencement. Where cancellation occurs before driver arrival or
-trip start, a full refund of any prepaid amount will be issued. Cancellations after driver arrival or after trip start may
-attract cancellation or service charges. Refunds are typically processed within 5–7 business days to the original
-payment method.
-10. Alternative Arrangements
-In cases where the originally requested service cannot be fulfilled, Pathaide may offer alternative arrangements
-including a different vehicle, another driver, or rescheduling. The user may accept or decline such alternatives. If
-no suitable alternative is accepted or available, a full refund of any prepaid amount shall be provided.
-11. User Responsibilities
-Users shall provide accurate information, comply with applicable laws, and behave respectfully towards drivers
-and support staff. Users shall not engage in unlawful activities, harassment, or misuse of the platform. Transport
-of illegal, hazardous, or prohibited items is strictly forbidden and may result in account termination and legal
-action.
-12. Driver & Owner Responsibilities
-Drivers and vehicle owners must maintain valid driving licenses, vehicle registration (RC), insurance, permits, and
-any other documentation required under applicable law. They must adhere to traffic regulations and safety
-standards, maintain vehicle condition, and provide services in a professional manner.
-13. Driver-on-Demand Service
-Pathaide may provide driver-on-demand services where a driver operates the customer’s personal vehicle. In
-such cases, the driver acts as an independent contractor engaged by the user, and Pathaide acts solely as a
-facilitator. Pathaide does not take possession or control of the customer’s vehicle.
-13.5 Accident & Damage Disclaimer
-For driver-on-demand services, the user remains the owner and controller of the vehicle at all times and is
-responsible for ensuring adequate insurance coverage. Pathaide shall not be liable for any damage, loss, or
-incident involving the vehicle. Drivers shall not be liable for accidental damage occurring in the normal course of
-driving. This limitation shall not apply in cases of proven gross negligence, willful misconduct, or violation of law.
-14. Driver Verification
-Pathaide undertakes reasonable verification measures for drivers, which may include identity verification and
-driving license checks. Such verification is limited in scope and does not constitute a guarantee of driver behavior,
-skill, or performance. Users acknowledge this limitation.
-15. Safety & Liability
-Pathaide shall not be liable for delays, service interruptions, loss of personal belongings, damage to goods, or
-third-party actions, except where liability cannot be excluded under applicable law. Users use the services at their
-own risk, subject to these Terms.
-Page 2
-Pathaide
-PATHAIDE – Terms & Conditions
-16. Goods Transport Disclaimer
-For goods transport services, users are responsible for proper packaging, labeling, and accurate declaration of the
-nature and weight of goods. Pathaide shall not be liable for damage arising from inadequate packaging, inherent
-defects, weather conditions, or road conditions beyond reasonable control.
-17. Commission Policy
-Pathaide charges a commission on each completed ride or service. Commission rates may vary based on vehicle
-category, service type, location, and other business considerations. The applicable commission will be
-communicated to drivers/owners through appropriate channels.
-18. Commission Revision
-Pathaide reserves the right to revise commission rates up to two (2) times in a calendar year. Any such revision
-will be communicated to drivers/owners in advance via app notification, SMS, email, or other official channels.
-Continued use of the platform after the effective date constitutes acceptance.
-19. Commission Confidentiality
-Commission structures are confidential and will not be publicly disclosed on the website or mobile application.
-Details are communicated directly to drivers/owners through in-person discussion or official communication
-channels to protect business strategy and integrity.
-20. Written/Digital Acknowledgment
-Drivers and vehicle owners may be required to acknowledge commission terms and related conditions through a
-signed agreement or digital acceptance (including app confirmation, SMS, or messaging platforms). Such
-acknowledgment shall serve as binding evidence of acceptance.
-21. Commission Payment Obligation
-Drivers and vehicle owners are obligated to pay the agreed commission on each completed service within the
-stipulated time. Failure to pay, whether partial or full, constitutes a breach of these Terms and may trigger
-enforcement actions.
-22. Legal Action & Recovery
-In the event of non-payment of commission or other dues, Pathaide reserves the right to suspend accounts,
-restrict access to bookings, recover outstanding amounts, and initiate legal proceedings. The defaulting party may
-be liable for recovery costs, including reasonable legal expenses.
-23. Data Privacy
-Pathaide collects and processes personal data including name, contact details, location data, and booking history
-for the purpose of providing and improving services. Data is handled in accordance with applicable privacy laws
-and internal policies, and is not shared except as necessary for service delivery or as required by law.
-24. Account Suspension
-Pathaide may suspend or terminate accounts of users, drivers, or owners for violations of these Terms, fraudulent
-activity, safety concerns, or non-payment of dues. Suspension may be temporary or permanent at Pathaide’s
-discretion.
-25. Legal Compliance
-Page 3
-Pathaide
-PATHAIDE – Terms & Conditions
-All services facilitated through Pathaide shall comply with applicable Indian laws and regulations, including the
-Motor Vehicles Act, 1988 and relevant local transport authority (RTO) rules. Users and drivers are individually
-responsible for compliance.
-26. Jurisdiction
-All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the
-courts located in Golaghat, Assam, India.
-27. Contact Information
-For support, queries, or complaints, users may contact Pathaide through the official email address and phone
-number provided on the platform. Pathaide will make reasonable efforts to respond within a reasonable time.
-28. Indemnity
-Users, drivers, and vehicle owners agree to indemnify, defend, and hold harmless Pathaide, its affiliates, and
-personnel from any claims, damages, losses, liabilities, costs, or expenses (including reasonable legal fees)
-arising out of or related to their use of the platform, breach of these Terms, violation of law, or infringement of
-third-party rights.
-29. Force Majeure and Limitation of Liability
-Pathaide shall not be liable for any failure or delay in performance due to events beyond its reasonable control,
-including natural disasters, strikes, government actions, network failures, or other unforeseen events. To the
-maximum extent permitted by law, Pathaide’s total aggregate liability in relation to any claim shall not exceed the
-amount paid by the user for the specific service giving rise to the claim.
-Page 4
-Pathaide';
-
-    const blob = new Blob([text], { type: "application/pdf" });
-    const link = document.createElement("a");
-
-    link.href = URL.createObjectURL(blob);
-    link.download = "terms.pdf";
-    link.click();
-}
 </script>
-
 
 </body>
 </html>
