@@ -172,9 +172,8 @@ function goPage(event, link){
     setTimeout(()=>{
         window.location = link.href;
     },500);
-
-
-    function downloadPDF() {
+}
+function downloadPDF() {
     const text = "hi jitu how are you";
 
     const blob = new Blob([text], { type: "application/pdf" });
@@ -185,6 +184,7 @@ function goPage(event, link){
     link.click();
 }
 </script>
+
 
 </body>
 </html>
