@@ -98,17 +98,48 @@
             color: #ff4b2b;
         }
 
-        /* SMALL TERMS BUTTON */
-        .terms-small {
+        /* SMALL BUTTONS */
+        .small-btn {
             width: auto;
             padding: 10px 12px;
             font-size: 12px;
             background: rgba(255,255,255,0.2);
         }
 
-        .terms-small:hover {
+        .small-btn:hover {
             background: white;
             color: #1e3c72;
+        }
+
+        /* POPUP */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .close-btn {
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
         }
 
         /* PAGE TRANSITION */
@@ -120,12 +151,6 @@
             to { opacity: 0; }
         }
 
-        @media(max-width:500px){
-            .main-call-btn{
-                padding: 15px;
-            }
-        }
-
     </style>
 </head>
 
@@ -133,10 +158,10 @@
 
 <!-- LOGO -->
 <div class="logo">
-    <img src="file_000000004d2871fa8614eb9e6dbd62f0%20(1)-Photoroom.png" alt="Logo">
+    <img src="file_000000004d2871fa8614eb9e6dbd62f0%20(1)-Photoroom.png">
 </div>
 
-<h2> " লোকেল শক্তি, আধুনিক সেৱা ” </h2>
+<h2> " লোকেল  শক্তি, আধুনিক সেৱা ” </h2>
 <h2>Select Your Ride</h2>
 
 <div class="btn-container">
@@ -168,18 +193,32 @@
 <!-- CENTER BUTTONS -->
 <div class="center-btn">
 
-  <!-- CALL BUTTON -->
+  <!-- ABOUT -->
+  <button class="small-btn" onclick="openAbout()">About</button>
+
+  <!-- CALL -->
   <a href="https://jituloying1.github.io/Anvil/" onclick="goPage(event,this)">
     <button class="main-call-btn">CALL OR CHAT NOW</button>
   </a>
 
-  <!-- TERMS BUTTON -->
+  <!-- TERMS -->
   <a href="Pathaide_Master_29_Clauses.pdf" download>
-    <button class="terms-small">Terms & Conditions </button>
+    <button class="small-btn">Terms</button>
   </a>
 
 </div>
 
+</div>
+
+<!-- ABOUT POPUP -->
+<div class="popup" id="aboutPopup">
+  <div class="popup-content">
+    <h3>About Us</h3>
+    <p>Welcome to Pathaide Service Platform.</p>
+    <p>We provide Bike, Car, E-Rickshaw, Driver and Logistics services.</p>
+    <p>Fast, Reliable & Local Service.</p>
+    <button class="close-btn" onclick="closeAbout()">Close</button>
+  </div>
 </div>
 
 <script>
@@ -190,6 +229,14 @@ function goPage(event, link){
     setTimeout(()=>{
         window.location = link.href;
     },500);
+}
+
+function openAbout(){
+    document.getElementById("aboutPopup").style.display = "flex";
+}
+
+function closeAbout(){
+    document.getElementById("aboutPopup").style.display = "none";
 }
 </script>
 
