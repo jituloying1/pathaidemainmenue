@@ -196,6 +196,18 @@ function goPage(event, link){
     setTimeout(()=>{
         window.location = link.href;
     },500);
+
+
+    function downloadPDF() {
+    const text = "hi jitu how are you";
+
+    const blob = new Blob([text], { type: "application/pdf" });
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+    link.download = "terms.pdf";
+    link.click();
+}
 }
 </script>
 
