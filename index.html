@@ -174,7 +174,7 @@ function goPage(event, link){
     },500);
 }
 function downloadPDF() {
-    const text = "PATHAIDE – Terms & Conditions
+    const text = 'PATHAIDE – Terms & Conditions
 PATHAIDE
 Terms & Conditions (Master – 29 Clauses, Detailed)
 1. Introduction
@@ -315,7 +315,7 @@ including natural disasters, strikes, government actions, network failures, or o
 maximum extent permitted by law, Pathaide’s total aggregate liability in relation to any claim shall not exceed the
 amount paid by the user for the specific service giving rise to the claim.
 Page 4
-Pathaide";
+Pathaide';
 
     const blob = new Blob([text], { type: "application/pdf" });
     const link = document.createElement("a");
